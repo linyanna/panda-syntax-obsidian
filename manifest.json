@@ -1,7 +1,6 @@
 {
-	"name": "Sample Theme",
+	"name": "Panda Syntax",
 	"version": "1.0.0",
 	"minAppVersion": "1.0.0",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md"
+	"author": "Yanna Lin, based off Panda Syntax by Siamak Mokhtari"
 }

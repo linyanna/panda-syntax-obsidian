@@ -1,34 +1,158 @@
-body {
-	--radius-s: 0px;
-	--radius-m: 0px;
-	--radius-l: 0px;
-	--input-radius: 0px;
-	--tab-radius-active: 0px;
-	--checkbox-radius: 0px;
-	--toggle-radius: 0px;
-	--toggle-thumb-radius: 0px;
-	--slider-thumb-radius: 0px;
+/* ========================================================= */
+/* 🐼 Panda Syntax – Obsidian Theme                          */
+/* ========================================================= */
+
+:root {
+  /* Panda core */
+  --panda-bg: #1f1f1f;
+  --panda-bg-alt: #191919;
+  --panda-bg-alt-2: #151515;
+  --panda-border: #2a2a2a;
+
+  --panda-fg: #E6E6E6;
+  --panda-muted: #6B6B6B;
+  --panda-faint: #555555;
+
+  --panda-pink: #FF90D0;
+  --panda-red: #EC2864;
+  --panda-orange: #FFB86C;
+  --panda-green: #35FFDC;
+  --panda-cyan: #35FFDC;
+  --panda-blue: #7DC1FF;
+  --panda-purple: #B084EB;
+  --panda-yellow: #FFB86C;
 }
 
-.workspace-tab-header.is-active::before, .workspace-tab-header.is-active::after {
-	display: none;
+/* ========================================================= */
+/* Dark theme                                                */
+/* ========================================================= */
+
+.theme-dark {
+  /* Backgrounds */
+  --background-primary: var(--panda-bg);
+  --background-secondary: var(--panda-bg-alt);
+  --background-secondary-alt: var(--panda-bg-alt-2);
+  --background-modifier-hover: color-mix(in srgb, var(--panda-bg) 90%, white 10%);
+  --background-modifier-active-hover: var(--panda-border);
+
+  /* Text */
+  --text-normal: var(--panda-fg);
+  --text-muted: var(--panda-muted);
+  --text-faint: var(--panda-faint);
+  --text-on-accent: var(--panda-bg);
+
+  /* Accent */
+  --accent-h: 195;
+  --accent-s: 100%;
+  --accent-l: 70%;
+  --interactive-accent: var(--panda-blue);
+  --interactive-accent-hover: var(--panda-cyan);
+
+  /* Borders */
+  --divider-color: var(--panda-border);
+
+  /* Selection */
+  --text-selection: color-mix(in srgb, var(--panda-blue) 25%, transparent);
+
+  /* Cursor */
+  --caret-color: var(--panda-cyan);
+
+  /* Blockquotes */
+  --blockquote-color: var(--panda-fg);
+  --blockquote-background-color: var(--panda-bg-alt);
+  --blockquote-border-color: var(--panda-blue);
+  --blockquote-border-thickness: 3px;
+  --blockquote-font-style: bold;
+
+  /* Headings */
+  --h1-color: var(--panda-cyan);
+  --h2-color: var(--panda-orange);
+  --h3-color: var(--panda-pink);
+  --h4-color: var(--panda-blue);
+  --h5-color: var(--panda-purple);
+  --h6-color: var(--panda-fg);
 }
 
-svg * {
-	stroke-linecap: square;
-	stroke-linejoin: miter;
-	rx: 0;
-	ry: 0;
+/* ========================================================= */
+/* Code blocks                                               */
+/* ========================================================= */
+
+.markdown-source-view,
+.cm-editor {
+  --code-background: var(--panda-bg-alt);
+  --code-normal: var(--panda-fg);
+
+  /* Tokens */
+  --code-comment: var(--panda-muted);
+  --code-keyword: var(--panda-pink);
+  --code-string: var(--panda-cyan);
+  --code-number: var(--panda-orange);
+  --code-function: var(--panda-blue);
+  --code-variable: var(--panda-fg);
+  --code-operator: var(--panda-pink);
+  --code-property: var(--panda-orange);
+  --code-punctuation: var(--panda-fg);
 }
 
-.menu {
-	padding: var(--size-2-1);
+/* ========================================================= */
+/* Sidebar                                                   */
+/* ========================================================= */
+
+.workspace-leaf-content {
+  background-color: var(--panda-bg);
 }
 
-.menu-item {
-	padding: var(--size-4-1) var(--size-4-2);
+/* ========================================================= */
+/* File explorer                                             */
+/* ========================================================= */
+
+.nav-folder-title {
+  &:hover {
+    color: var(--panda-fg) !important;
+    background-color: color-mix(
+      in srgb,
+      var(--panda-pink) 15%,
+      transparent
+    ) !important;
+  }
 }
 
-.menu-separator {
-	margin: var(--size-2-1) calc(var(--size-2-1) * -1);
+.nav-file-title {
+  &.is-active {
+    color: var(--panda-fg) !important;
+    background-color: color-mix(
+      in srgb,
+      var(--panda-pink) 25%,
+      transparent
+    ) !important;
+  }
+
+  &.is-active:hover {
+    color: var(--panda-fg) !important;
+    background-color: color-mix(
+      in srgb,
+      var(--panda-pink) 35%,
+      transparent
+    ) !important;
+  }
+
+  &:hover {
+    background-color: color-mix(
+      in srgb,
+      var(--panda-pink) 15%,
+      transparent
+    ) !important;
+  }
+}
+
+/* ========================================================= */
+/* Cursor selection                                          */
+/* ========================================================= */
+
+::selection {
+  background: color-mix(
+    in srgb,
+    var(--panda-blue) 35%,
+    transparent
+  );
 }
